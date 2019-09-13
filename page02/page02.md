@@ -35,10 +35,13 @@ https://github.com/neo-project/neo-compiler/tree/master/neoa
 
 
 直接上代码，这个程序位置在 samples/neovm01
+
 ![](scriptbuilder02.png)
+
 注意引用的Neo3.0 的NeoVM，这系列文章都只针对NeoVM3.0，大可不必担心，其实NeoVM3.0并没有那么不同。
 
 ![](scriptbuilder01.png)
+
 从nuget引入Neo.VM
 
 然后用ScriptBuilder就能直接完成汇编器的工作，我们能得到
@@ -47,6 +50,7 @@ machinecode=0x6151529366
 ```
 
 然后我们让neovm来执行这个
+
 ![](scriptbuilder03.png)
 
 我们同样能得到retvalue=3

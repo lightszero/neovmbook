@@ -19,7 +19,11 @@ NGD建立的资料非常标准，是那种标准的文档：情报都在那里�
 我在NGD的仓库里面看了一圈，不知道我准备写的内容放在哪里合适，让我纠结，所以我决定先开个仓库放。毕竟放哪里不重要，搬家很容易。
 
 ## 文章目录
-[NEOVM是什么，他如何工作](page01/page01.md) 初稿完成
-[NEOVM执行的bytearray(.avm)从何而来](page02/page02.md) 未完成
-[如何编译出NEOVM所需的bytearray(上篇)] 未完成
-[如何编译出NEOVM所需的bytearray(下篇)] 未完成
+
+[NEOVM是什么，他如何工作](page01/page01.md)[done]
+
+[NEOVM执行的bytearray(.avm)从何而来](page02/page02.md)[50%]
+
+[如何编译出NEOVM所需的bytearray(上篇)] [0%]
+
+[如何编译出NEOVM所需的bytearray(下篇)] [0%]
