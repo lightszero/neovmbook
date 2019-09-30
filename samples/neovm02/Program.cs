@@ -1,127 +1,110 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace neovm01
 {
     class Program
     {
-        class Scanner
+        public interface ISyntaxNode
         {
-            public static List<string> SplitWords(string srccode)
+            ISyntaxNode[] subnodes
             {
-                string numbers = "1234567890";
-                string ops = "+-*/()";
-
-                List<string> words = new List<string>();
-                string tempnum = "";
-                bool lastop = true;
-                for (var i = 0; i < srccode.Length; i++)
-                {
-                    var c = srccode[i];
-                    if (ops.Contains(c))
-                    {
-
-                        if (lastop)
-                        {
-                            tempnum += c;
-                        }
-                        else
-                        {
-                            words.Add(tempnum);
-                            tempnum = null;
-
-                            words.Add(c.ToString());
-                            lastop = true;
-                        }
-                    }
-                    else if(numbers.Contains(c))
-                    {
-                        tempnum += c;
-                        lastop = false;
-                    }
-                }
-                if (tempnum != null)
-                    words.Add(tempnum);
-
-                return words;
+                get;
             }
         }
-        class SyntaxNode
+        class SyntaxNode_Add : ISyntaxNode
         {
-            public SyntaxNode(Type type,int value)
+            public ISyntaxNode[] subnodes
             {
-                this.type = type;
-                this.value = value;
+                get
+                {
+                    return new ISyntaxNode[] { left, right };
+                }
             }
-            public enum Type
-            {
-                Number,
-                Math,
-            }
-            public Type type;
-            public int value;
-
-            public List<SyntaxNode> subnodes;
+            public ISyntaxNode left;
+            public ISyntaxNode right;
             public override string ToString()
             {
-                if (type == Type.Number)
-                    return "<num>" + value;
-                if (type == Type.Math)
-                {
-                    switch (value)
-                    {
-                        case 1:
-                            return "<math>+";
-                        case 2:
-                            return "<math>-";
-                    }
-
-                }
-                throw new Exception("error format");
-            }
-            public static SyntaxNode Parse(string srccode)
-            {
-                var words = Scanner.SplitWords(srccode);
-                if (words.Count == 1)
-                    return new SyntaxNode(Type.Number,int.Parse(words[0]));
-                {
-
-                }
-                return null;
+                return "[+]";
             }
         }
-        static void DumpAST(SyntaxNode node, int layer = 0)
+        class SyntaxNode_Num : ISyntaxNode
         {
-            var space = "";
-            for (var i = 0; i < layer; i++)
-                space += "   ";
+            public ISyntaxNode[] subnodes => null;
+            public uint num;
+            public override string ToString()
+            {
+                return "[" + num + "]";
+            }
+        }
+
+        public static ISyntaxNode ParseSyntaxNode(string srccode)
+        {
+            var words = srccode.Split('+');
+            return ParseWords(new ArraySegment<string>(words, 0, words.Length));
+        }
+        static ISyntaxNode ParseWords(ArraySegment<string> words)
+        {
+            if (words.Count == 1)
+            {
+                return new SyntaxNode_Num { num = uint.Parse(words[0]) };
+            }
+            else
+            {
+                var right = ParseWords(words.Slice(words.Count - 1, 1));
+                var left = ParseWords(words.Slice(0, words.Count - 1));
+                var add = new SyntaxNode_Add() { left = left, right = right };
+                return add;
+            }
+
+        }
+        static void DumpAST(ISyntaxNode node,string space="")
+        {            
             Console.WriteLine(space + node.ToString());
             if (node.subnodes != null)
             {
-                foreach (var subnode in node.subnodes)
+                for(var i=0;i<node.subnodes.Length;i++)
                 {
-                    DumpAST(subnode, layer + 1);
+                  
+                    var subspace = "";
+                    if (space == "")
+                        subspace = "├─ ";
+                    else
+                        subspace = "│   " + space;
+
+                    if (i == node.subnodes.Length - 1)
+                        subspace = subspace.Replace("├─ ", "└─ ");
+
+                    DumpAST(node.subnodes[i], subspace);
                 }
             }
         }
-
+        static void EmitCode(Neo.VM.ScriptBuilder builder,ISyntaxNode ast)
+        {
+            if(ast is SyntaxNode_Num)
+            {
+                builder.EmitPush((ast as SyntaxNode_Num).num);
+            }
+            else if(ast is SyntaxNode_Add)
+            {
+                foreach(var sn in ast.subnodes)
+                {
+                    EmitCode(builder, sn);
+                }
+                builder.Emit(Neo.VM.OpCode.ADD);
+            }
+        }
 
         static void Main(string[] args)
         {
 
-            var srccode = " -41 + -2 ";
-            var ast = SyntaxNode.Parse(srccode);
+            var srccode = " 1 + 2 + 4 + 5";
+            var ast = ParseSyntaxNode(srccode);
             DumpAST(ast);
 
 
             Neo.VM.ScriptBuilder builder = new Neo.VM.ScriptBuilder();
-
-            builder.Emit(Neo.VM.OpCode.NOP);
-            builder.EmitPush(1);
-            builder.EmitPush(2);
-            builder.Emit(Neo.VM.OpCode.ADD);
+            EmitCode(builder, ast);
             builder.Emit(Neo.VM.OpCode.RET);
 
             var machinecode = builder.ToArray();
