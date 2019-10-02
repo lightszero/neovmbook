@@ -1,4 +1,7 @@
-# AVM从何而来-高级语言-变量
+参考源码位置
+https://github.com/lightszero/neovmbook/tree/master/samples/compiler_csharp01
+
+# 编译AVM-高级语言-变量
 
 之前我们已经讨论过地址转换了，那么这一篇就只是关于高级语言如何转换为AVM了
 

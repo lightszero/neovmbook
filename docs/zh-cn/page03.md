@@ -1,3 +1,6 @@
+参考源码位置
+https://github.com/lightszero/neovmbook/tree/master/samples/neovm02
+
 # AVM从何而来-模块化和汇编器
 
 之前一直在提到 汇编器，在流程说明中，我们没有认真的讨论这个问题
