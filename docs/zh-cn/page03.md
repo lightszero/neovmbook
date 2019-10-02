@@ -137,7 +137,7 @@ aaa 和 bbb 就是两个函数内部的子模块了
 Main()
 {
     PUSH 1
-    JMP label1
+    JMPIF label1
     PUSH 1
     RET
 label1:
