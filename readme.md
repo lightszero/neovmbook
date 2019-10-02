@@ -18,14 +18,16 @@ NGD建立的资料非常标准，是那种标准的文档：情报都在那里�
 
 我在NGD的仓库里面看了一圈，不知道我准备写的内容放在哪里合适，让我纠结，所以我决定先开个仓库放。毕竟放哪里不重要，搬家很容易。
 
-## 文章目录
+## 文章目录 中文
 
-[NEOVM是什么，他如何工作](page01/page01.md)[done]
+[NEOVM是什么，他如何工作](docs/zh-cn/page01.md)[done]
 
-[AVM从何而来-流程说明](page02/page02.md)[done]
+[AVM从何而来-流程说明](docs/zh-cn/page02.md)[done]
 
-[AVM从何而来-模块化和汇编器] [10%]
+[AVM从何而来-模块化和汇编器](docs/zh-cn/page03.md) [10%]
 
-[AVM从何而来-高级语言] [0%]
+[AVM从何而来-高级语言](docs/zh-cn/page04.md)  [0%]
 
-[AVM从何而来-另一种汇编语言] [0%]
+[AVM从何而来-另一种汇编语言](docs/zh-cn/page05.md)  [0%]
+
+## Index in English

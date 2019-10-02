@@ -1,4 +1,10 @@
-# NEOVM的.avm从何而来
+# AVM从何而来-流程说明
+
+这里讨论了生成AVM的两种方法
+
+1.使用一个汇编器帮助类，通过汇编代码，在代码中直接合成AVM
+
+2.使用编译器，从高级语言获得AVM
 
 ## 汇编器
 这里需要谈论一下汇编了
@@ -38,11 +44,11 @@ https://github.com/neo-project/neo-compiler/tree/master/neoa
 
 直接上代码，这个程序位置在 samples/neovm01
 
-![](scriptbuilder02.png)
+![](../imgs/scriptbuilder02.png)
 
 注意引用的Neo3.0 的NeoVM，这系列文章都只针对NeoVM3.0，大可不必担心，其实NeoVM3.0并没有那么不同。
 
-![](scriptbuilder01.png)
+![](../imgs/scriptbuilder01.png)
 
 从nuget引入Neo.VM
 
@@ -53,7 +59,7 @@ machinecode=0x6151529366
 
 然后我们让neovm来执行这个
 
-![](scriptbuilder03.png)
+![](../imgs/scriptbuilder03.png)
 
 我们同样能得到retvalue=3
 
@@ -93,18 +99,18 @@ ok，我们接下来专注如何实现这个自动将加法运算编译为汇编
 这个简单编译器的源码分为两个部分，一部分是将源码整理成抽象语法树，也就是AST
 就是这个ParseSynatxNode函数
 
-![](compiler01.png)
+![](../imgs/compiler01.png)
 
-![](compiler02.png)
+![](../imgs/compiler02.png)
 
 然后我们就得到”1+2+3+4“这个表达式的抽象语法树
 
 接下来第二步，就是把抽象语法树变成我们实际要执行的代码
 
 也非常简单，调用汇编器，深度遍历语法树，得到机器码
-![](compiler03.png)
+![](../imgs/compiler03.png)
 
-![](compiler04.png)
+![](../imgs/compiler04.png)
 
 之后就是把这段代码用neovm执行，得到那个结果 12
 
@@ -128,7 +134,7 @@ ok，我们接下来专注如何实现这个自动将加法运算编译为汇编
 ### 2.建立抽象语法树
 
 然后是做语法分析，最常见的组织形式就是生成一个抽象语法树
-![](compiler02.png)
+![](../imgs/compiler02.png)
 ”
 1+2+4+5“ 被整理成 一棵树
 
@@ -145,7 +151,7 @@ ok，我们接下来专注如何实现这个自动将加法运算编译为汇编
 
 ### 3.转换为汇编代码
 还是来看这里
-![](compiler02.png)
+![](../imgs/compiler02.png)
 
 我们深度遍历这颗树，最深的节点是 1 2
 
@@ -184,7 +190,7 @@ ADD
 ```
 
 对照一下EmitCode的代码
-![](compiler03.png)
+![](../imgs/compiler03.png)
 
 我们直接用汇编器 把PUSH ADD 变成了机器码
 

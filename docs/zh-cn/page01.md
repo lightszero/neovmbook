@@ -12,11 +12,11 @@ NEOVM 就是 NEO's VM
 
 比如hyper-V，VMWare
 
-![](pic01.jpg)
+![](../imgs/pic01.jpg)
 
 还有街机模拟器
 
-![](pic02.jpg)
+![](../imgs/pic02.jpg)
 
 ### 1.2另一种是仅仅作为执行环境
 
@@ -50,7 +50,7 @@ NeoVM的设计更贴近机器，执行的代码段是一个内存块，执行时
 
 要说明这件事情我们必须得复习一下图灵机了
 
-![](turing01.png)
+![](../imgs/turing01.png)
 
 忽略我丑陋的字迹
 
@@ -80,7 +80,7 @@ samples/turing01
 
 不到100行代码，模拟了那副丑陋的画里的图灵机执行过程
 
-![](turing02.png)
+![](../imgs/turing02.png)
 
 首先是准备好写着代码的磁带
 ```
@@ -104,7 +104,7 @@ while(!vm.stop)
 
 让我们来分析一下发生了什么。
 
-![](turing03.png)
+![](../imgs/turing03.png)
 
 这只是模拟程序，一次说明一个问题，我们用class Head表示磁头，用List<OpCode>表示磁带
 
@@ -112,7 +112,7 @@ while(!vm.stop)
 
 状态空间 是 stop变量 和 calcstack 栈
 
-![](turing04.png)
+![](../imgs/turing04.png)
 
 执行指令的步骤写在函数StepOne中
 
