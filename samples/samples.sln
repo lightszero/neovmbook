@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "neovm02", "neovm02\neovm02.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "compiler_csharp01", "compiler_csharp01\compiler_csharp01.csproj", "{A689116D-0724-4D06-9C2C-06EA0357FFAD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "compiler_il01", "compiler_il01\compiler_il01.csproj", "{EF61E035-3D0A-4F30-A742-852A8F88ACA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A689116D-0724-4D06-9C2C-06EA0357FFAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A689116D-0724-4D06-9C2C-06EA0357FFAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A689116D-0724-4D06-9C2C-06EA0357FFAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF61E035-3D0A-4F30-A742-852A8F88ACA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF61E035-3D0A-4F30-A742-852A8F88ACA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF61E035-3D0A-4F30-A742-852A8F88ACA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF61E035-3D0A-4F30-A742-852A8F88ACA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

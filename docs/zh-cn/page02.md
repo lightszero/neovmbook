@@ -1,3 +1,6 @@
+参考源码位置
+https://github.com/lightszero/neovmbook/tree/master/samples/neovm01
+
 # AVM从何而来-流程说明
 
 这里讨论了生成AVM的两种方法

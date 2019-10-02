@@ -18,14 +18,17 @@ class Program
     }
 }
 ";
+            //step01 srccode -> AST
             var ast = Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree.ParseText(srccode);
             var root = ast.GetRoot();
             DumpAst(root);
 
+            //step02 compile AST->ASMLProject
             Neo.ASML.Node.ASMProject proj = Compiler.Compile(root);
+
+            //step03 link ASML->machinecode
             var module = Neo.ASML.Linker.Linker.CreateModule(proj);
             module.Dump((str) => Console.WriteLine(str));
-
             var machinecode = Neo.ASML.Linker.Linker.Link(module);
             DumpAVM(machinecode);
 

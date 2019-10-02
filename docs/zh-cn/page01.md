@@ -1,3 +1,6 @@
+参考源码位置
+https://github.com/lightszero/neovmbook/tree/master/samples/turing01
+
 # NEOVM 是什么，以及他如何工作
 
 NEOVM 就是 NEO's VM
