@@ -65,10 +65,10 @@ This assumes that you understand how tape music players work, or head and tape b
 
 3.The instruction set is known. Four instructions are shown in the figure.
 
-nop -- Do nothing
-push[n] -- Push a number into the calcstack
-add -- Take two values from calcstack, add them together, and put them back in calcstack
-ret -- End current execution
+nop -- Do nothing  
+push[n] -- Push a number into the calcstack  
+add -- Take two values from calcstack, add them together, and put them back in calcstack  
+ret -- End current execution  
 
 4.Register space to manage state. For NeoVM, registers are two stacks, CalcStack and AltStack.
 
@@ -135,11 +135,11 @@ ADD -- Take two values from calcstack, add them together, and put them back in c
 
 If you run this program, breakpoints, run "StepOne" step by step, observe calcstack, you will find:
 
-1.After nop, nothing happens;
-2.After push 1，calcstack is [1]
-3.After push 2，calcstack is [2,1]
-4.After add，calcstack is [3]
-5.After ret, stop becomes true, Then the loop is over.
+1.After nop, nothing happens;  
+2.After push 1，calcstack is [1];  
+3.After push 2，calcstack is [2,1];  
+4.After add，calcstack is [3];  
+5.After ret, stop becomes true, Then the loop is over.  
 
 This is how NEOVM works.
 
