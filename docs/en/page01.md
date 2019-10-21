@@ -39,7 +39,7 @@ For example, lua is a typical embedded script.
 
 Of course, there are cases where c# and js are used as embedded scripts through mono and v8.
 
-## 2 What is NeoVM?
+## 2. What is NeoVM?
 
 NeoVM is in the form of 1.2.2 above, similar to Lua, and is an embedded execution environment.
 
@@ -49,7 +49,7 @@ NeoVM is a separate system that does not rely on the Neo project. NeoVM only pro
 
 NeoVM is designed more like a machine, executing a piece of code that is a block of memory that parses data into instructions on execution.
 
-## 3 How NeoVM is executed
+## 3. How NeoVM is executed
 
 To explain this, we must review the Turing machine.
 
@@ -74,7 +74,7 @@ ret -- End current execution
 
 There are tapes, heads, instruction sets, and state space. This is a Turing machine.
 
-## 4 talk is cheap
+## 4. talk is cheap
 
 Let's look at the code.
 
