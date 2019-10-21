@@ -49,7 +49,7 @@ NeoVM is a separate system that does not rely on the Neo project. NeoVM only pro
 
 NeoVM is designed more like a machine, executing a piece of code that is a block of memory that parses data into instructions on execution.
 
-### 3 How NeoVM is executed
+## 3 How NeoVM is executed
 
 To explain this, we must review the Turing machine.
 
@@ -74,12 +74,11 @@ ret -- End current execution
 
 There are tapes, heads, instruction sets, and state space. This is a Turing machine.
 
-### 4 talk is cheap
+## 4 talk is cheap
 
 Let's look at the code.
 
-The code is here:
-samples/turing01
+The code is here: samples/turing01
 
 Less than 100 lines of code, simulating the execution of the Turing machine in that ugly picture.
 
