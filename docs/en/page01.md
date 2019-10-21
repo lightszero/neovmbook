@@ -23,9 +23,9 @@ and arcade simulator
 
 ### 1.2 The other is simply as an execution environment
 
-Such as JVM
-Such as dotnet framework
-Such as V8\lua
+Such as JVM  
+Such as dotnet framework  
+Such as V8\lua  
 
 For developers, the implementation environment is divided into two major categories.
 
@@ -118,9 +118,9 @@ The state space is the variable of "stop" and the stack of "calcstack".
 The steps to execute the instruction are written in the function StepOne.
 
 The process of StepOne is
-1.Read the code at the head of the tape;
-2.Execute the code;
-3.Scroll head head.pos++;
+1.Read the code at the head of the tape;  
+2.Execute the code;  
+3.Scroll head head.pos++;  
 
 When the code is executed, it is operating the state space.
 
@@ -136,9 +136,9 @@ ADD -- Take two values from calcstack, add them together, and put them back in c
 If you run this program, breakpoints, run "StepOne" step by step, observe calcstack, you will find:
 
 1.After nop, nothing happens;  
-2.After push 1，calcstack is [1];  
-3.After push 2，calcstack is [2,1];  
-4.After add，calcstack is [3];  
+2.After push 1, calcstack is [1];  
+3.After push 2, calcstack is [2,1];  
+4.After add, calcstack is [3];  
 5.After ret, stop becomes true, Then the loop is over.  
 
 This is how NEOVM works.
