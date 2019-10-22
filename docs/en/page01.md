@@ -1,4 +1,4 @@
-Reference source code location
+Reference source code location  
 https://github.com/lightszero/neovmbook/tree/master/samples/turing01
 
 # What is NEOVM and how does it work
@@ -116,7 +116,7 @@ The state space is the variable of "stop" and the stack of "calcstack".
 
 The steps to execute the instruction are written in the function StepOne.
 
-The process of StepOne is
+The process of StepOne is  
 1.Read the code at the head of the tape;  
 2.Execute the code;  
 3.Scroll head head.pos++;  
