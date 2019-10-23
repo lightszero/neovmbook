@@ -196,6 +196,7 @@ ADD
 ```
 
 Compare the code with EmitCode
+
 ![](../imgs/compiler03.png)
 
 We turn PUSH ADD into machine code directly with the assembler.
