@@ -40,7 +40,7 @@ NGD建立的资料非常标准，是那种标准的文档：情报都在那里�
 ## Index in English
 [What is NEOVM and how does it work](docs/en/page01.md)[done]
 
-[Where AVM comes from - process description](docs/en/page02.md)[done]
+[Where does AVM comes from - process description](docs/en/page02.md)[done]
 
 [Where does AVM come from - modularity and assembler](docs/en/page03.md) [done]
 
