@@ -38,3 +38,12 @@ NGD建立的资料非常标准，是那种标准的文档：情报都在那里�
 
 
 ## Index in English
+[What is NEOVM and how does it work](docs/en/page01.md)[done]
+
+[Where AVM comes from - process description](docs/en/page02.md)[done]
+
+[Where does AVM come from - modularity and assembler](docs/en/page03.md) [done]
+
+[编译AVM-高级语言-变量](docs/en/page04.md)  [done]
+
+[编译AVM-字节码-变量](docs/en/page05.md)  [done]
