@@ -1,7 +1,7 @@
 Reference source code location  
 https://github.com/lightszero/neovmbook/tree/master/samples/neovm01
 
-# Where AVM comes from - process description
+# Where does AVM come from - process description
 
 Two methods for generating AVM are discussed here
 
