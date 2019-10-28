@@ -21,7 +21,7 @@ Well, let’s talk about it one by one.
 
 nop - Do noting
 
-loc - Is the PUSH of NEOVM
+ldc - Is the PUSH of NEOVM
 
 stloc - Put the values into the variable table.
 
