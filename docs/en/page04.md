@@ -40,9 +40,9 @@ Constant computation is very easy to express with the CalcStackstack:
 ```
 The trouble with variables is that they can change, so they should come from a location, not a specific value.
 
-For example, a list of variables, let's take a look at this program with the idea of a list of variables.
+For example, a variable table, let's take a look at this program with the idea of a variable table.
 
-Suppose we have a global list of variables
+Suppose we have a global variable table
 ```
     //we have a List<int> values;
     int a=1; //a is values[0]
@@ -53,12 +53,12 @@ Suppose we have a global list of variables
     //return values[0]+values[1]
 ```
 
-In fact, to compile this code, we need to create a variable list.
-Let's first design two pseudocodes to operate our variable list.
+In fact, to compile this code, we need to create a variable table.
+Let's first design two pseudocodes to operate our variable table.
 
-STLOC  Put the values into the variable list.
+STLOC  Put the values into the variable table.
 
-LDLOC  Take the values from the variable list.
+LDLOC  Take the values from the variable table.
 
 Using pseudocode to represent this program is:
 ```
@@ -76,13 +76,13 @@ Using pseudocode to represent this program is:
     RET
 ```
 
-Then we write the variable list directly in the form of code：
+Then we write the variable table directly in the form of code：
 
 NEWARRAY  
 PICKITEM  
 SETITEM  
 
-These operations are available to NEOVM. We create a variable list on the AltStack when the function is started, and remove the variable list when the instruction is RET.
+These operations are available to NEOVM. We create a variable table on the AltStack when the function is started, and remove the variable table when the instruction is RET.
 
 ```
     //CreateArray size=2
