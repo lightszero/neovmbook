@@ -44,6 +44,6 @@ NGD建立的资料非常标准，是那种标准的文档：情报都在那里�
 
 [Where does AVM come from - modularity and assembler](docs/en/page03.md) [done]
 
-[编译AVM-高级语言-变量](docs/en/page04.md)  [done]
+[Compile AVM - High-Level Language - Variables](docs/en/page04.md)  [done]
 
-[编译AVM-字节码-变量](docs/en/page05.md)  [done]
+[Compile AVM - Bytecode - Variables](docs/en/page05.md)  [done]
