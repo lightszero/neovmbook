@@ -9,7 +9,7 @@ I’ve been talking about the assembler before, but in the process description, 
 
 We know that NEOVM is an implementation of a Turing machine, but a Turing machine is a tape machine, and standard tape drives are not modular.
 
-You think about the previous tape drive listening to music, can you simply jump to the next song with one click.
+Think about listening to music on tape, can you simply jump to the next song with one click?
 
 Organizing data by song is modularity. CDS are ok, tapes are not.
 
@@ -76,15 +76,15 @@ method1()
 
 Engineers think and write code module by module, regardless of which block of memory is which module.
 
-The work of considering the relationship between modules and address translation is often referred to as Link.
+The work of considering the translation relationship between modules and address is often referred to as Link.
 
-The c++ language, for example, has a very explicitly separate Link process.
+The c++ language, for example, has a very explicitly separate link process.
 
 The CALL instruction is used for function-level modularity.
 
 The JMP instruction is used for modularity inside functions.
 
-Our assembler has the function of a Linker that automatically connects the two modules, assigns them the appropriate address segment, and makes the CALL instruction automatically point to the right place.
+Our assembler has the function of a linker that automatically connects the two modules, assigns them the appropriate address segment, and makes the CALL instruction automatically point to the right place.
 
 Now assembly, the next step is the high-level language, the process is the same, the only way.
 

@@ -3,11 +3,11 @@ https://github.com/lightszero/neovmbook/tree/master/samples/neovm01
 
 # Where does AVM come from - process description
 
-Two methods for generating AVM are discussed here
+Two methods for generating AVM are discussed here:
 
-1.Use an assembler helper class to directly synthesize AVM in the code through assembly code
+1.Use an assembler helper class to synthesize AVM directly in the code through assembly code.
 
-2.Use a compiler to get AVM from a high-level language
+2.Use a compiler to get AVM from a high-level language.
 
 ## Assembler
 It's time to talk about assembly.
@@ -36,7 +36,7 @@ Let's make an assembler.
 
 There is a ScriptBuilder.cs in NEOVM that does most of the work of an assembler, except for link.
 
-The problem of link is more complicated, and it is also a focus of the assembler. This requires us to have more understanding of virtual machines such as NEOVM to continue to explore.Let's focus on turning the five assembly instructions into byte[].
+The problem of link is more complicated, and it is also a focus of the assembler. This requires us to have more understanding of virtual machines such as NEOVM to continue to explore. Let's focus on turning the five assembly instructions into byte[].
 
 \*NEO used to have an official assembler project（neoa，Years of disrepair
 https://github.com/neo-project/neo-compiler/tree/master/neoa
@@ -54,7 +54,7 @@ Note that the reference is NeoVM of Neo3.0, This series of articles only focus o
 
 ![](../imgs/scriptbuilder01.png)
 
-Import NEO.VM from nuget
+Import NEO.VM from nuget.
 
 Then we can use ScriptBuilder to directly complete the work of assembler, we can get
 ```
@@ -96,7 +96,7 @@ samples/neovm02
 
 There is an extremely simple compiler here.
 
-He can only compile the addition of positive integers, such as
+It can only compile the addition of positive integers, such as
 
 “1+2+4+5”
 
@@ -120,18 +120,17 @@ And then we just execute this code with neovm, and get the result 12.
 
 ## Process analysis
 
-That's it. Let's analyze it
+Let's analyze it.
 
 There should be several processes, which are often referred to as compilers in general.
 
-    Word segment->Build an abstract syntax tree->Convert to assembly code->Convert to machine code
+    Word segmentation->Build an abstract syntax tree->Convert to assembly code->Convert to machine code
 
 ### 1.Word segmentation
 
 Word segmentation is the first job of a compiler.
 
-”1+2323+4”,The compiler cannot analyze byte by byte, first splitting the string into individual words
-“1”,"+","2323","+","4"
+”1+2323+4”, The compiler cannot analyze byte by byte, first splitting the string into individual words “1”,"+","2323","+","4"
 
 Because our test compiler is very simple, a string.split is done.
 

@@ -21,11 +21,11 @@ So such a high-level language instruction, obviously cannot be converted.
    return a + b;
 ```
 
-We need to think about what we have in NEOVM, we have a CalcStack and a AltStack,
+We need to think about what we have in NEOVM, we have a CalcStack and a AltStack.
 The CalcStack is easy to use to calculate a simple evaluation expression, such as "1+2+3+4", but once the variable appears, it seems more complicated.
 
 
-Constant computation is very easy to express with the CalcStackstack:
+Constant computation is very easy to express with the CalcStack:
 ```
     const int a=0;
     const int b=2;
@@ -131,10 +131,9 @@ The code is divided into distinct parts.
 
 Step01 is to interpret the C# source code as an abstract syntax tree (AST). Here we can call rosyln directly to solve this problem. Whatever high-level language you are going to compile, there are a lot of tools that you can use to interpret it as an AST.
 
-Step02 is the part that compiles the AST into assembly
-This part is the main job of the compiler.
+Step02 is the part that compiles the AST into assembly. This part is the main job of the compiler.
 
-Step03 is the job of the Linker, and it's always the same regardless of what you compile and from.
+Step03 is the job of the linker, and it's always the same regardless of what you compile and from.
 In the next article we will discuss the code that does the same thing from IL to AVM, where you will find that step03 is still the same code.
 
 Then you test with NEOVM, and no doubt you'll get result 3.
